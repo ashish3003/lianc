@@ -9,4 +9,4 @@ Interfacing of Stepper motors like Thermionics, and Zaber xyz axis.
 Standard interfaces worked upon like RS232/485, GPIB, USB, USBTMC, LAN, VXI11.
 
 PyQt4 based interactive GUI support.
-# kicadProj
+
