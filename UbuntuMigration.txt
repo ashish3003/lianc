@@ -1,0 +1,15 @@
+While migrating from one platform to another, do the following:
+    1. Use Remastersys to create a dtistributable copy of existing installation. or
+    2.a Install fresh copy of same linux version.
+    2.b Extract a list of packages installed in previous version by 
+        dpkg -l | grep ^ii | awk '(print $2)' > installed
+    2.c List will be saved in a file named "installed". Copy this file to new system.
+    2.d In the newly installed OS, install the saved packages by:
+        sudo apt-get install $(cat installed)
+    3. Next step is copy a list of installed python packages from old installation to new one.
+    3.a type in a terminal
+        pip freeze > req.txt
+    3.b Copy this "req.txt" file from old to new system.
+    3.c in the new system, type
+         pip --proxy http://usrename:password@proxyLink:port/ install -r req.txt
+         pip --proxy https://usrename:password@proxyLink:port/ install -r req.txt
